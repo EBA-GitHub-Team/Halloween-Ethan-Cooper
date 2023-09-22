@@ -16,7 +16,7 @@ body, h1, div, img, ul {
 
 /* Global CSS Rules */
 body {
-    background-color: #820002;
+    background-color: #3F0B52;
     font-family: "Segoe UI", Verdana, Arial, "sans-serif";
 }
 img {
@@ -28,7 +28,7 @@ img {
 #header {
     position: static;
     top: 0;
-    background-color: #820002;
+
 }
 #header img {
     margin: 0 auto;
@@ -38,7 +38,6 @@ img {
 /* Navigation CSS Rules */
 #nav {
     margin: 0 auto;
-    width: 300px;
 }
 #nav ul {
     list-style-type: none;
@@ -48,9 +47,8 @@ img {
 #nav li {
     font-size: 1.2em;
     font-weight: 500;
-    border-top: none;
-    display: block;
-    border-bottom: 1px solid white;
+    display: inline-block;
+
     padding: 1%;
 }
 #nav li a {
@@ -127,7 +125,7 @@ table, td, th {
 
 /* Footer CSS Rules */
 #footer {
-    background-color: #820002;
+    background-color: #3F0B52;
     padding: 1%;
 }
 #footer p {
