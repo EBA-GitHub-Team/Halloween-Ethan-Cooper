@@ -4,7 +4,7 @@
 - Pricing and Purchasing
   Gallery page
 - Social Links
-  Newsletter
+- Newsletter
   Video
-  Copyright page
-  Copyright/fair use
+- Copyright page
+- Copyright/fair use

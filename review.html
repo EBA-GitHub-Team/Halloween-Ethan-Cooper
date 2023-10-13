@@ -41,11 +41,21 @@
 
         <script>
 			const urlParams = new URLSearchParams(window.location.search);
-            let amount = Number(urlParams.get('quantity'));
-            if (isNaN(amount) || amount < 1) {
-                alert('Your order cannot be completed: Invalid quantity.\nYou will be redirected to the purchase page.');
+            let amount = parseInt(Number(urlParams.get('quantity')));
+            if (isNaN(amount)) {
+                alert('Your order cannot be completed: Cannot parse quantity.\nYou will be redirected to the purchase page.');
                 document.location = 'tickets.html';
-                throw 'Invalid quantity';
+                throw 'Cannot parse quantity';
+            }
+            if (amount < 1) {
+                alert('Your order cannot be completed: Minimum purchase is 1 ticket.\nYou will be redirected to the purchase page.');
+                document.location = 'tickets.html';
+                throw 'Minimum purchase is 1 ticket';
+            }
+            if (amount > 100) {
+                alert('Your order cannot be completed: Maximum purchase is 100 tickets.\nYou will be redirected to the purchase page.');
+                document.location = 'tickets.html';
+                throw 'Maximum purchase is 100 tickets';
             }
             document.getElementById('tickets').innerHTML = amount;
             document.getElementById('cost').innerHTML = amount * 100;
