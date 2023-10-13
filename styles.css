@@ -19,7 +19,7 @@ body, h1, div, img, ul {
 
 /* Global CSS Rules */
 body {
-    background-color: #3F0B52;
+    background-color: #470A70;
     font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
 }
 img {
@@ -60,6 +60,11 @@ img {
     padding: .1em .75em;
     text-decoration: none;
 }
+
+#nav li a:hover{
+	font-size: 1.3em;
+}
+
 #nav li:last-child {
     border-bottom: none;
 }
@@ -67,19 +72,29 @@ img {
 /* Main CSS Rules */
 #main {
     clear: both;
-	
     padding: 2%;
     font-size: 1.25em;
-	
+}
+
+.dance{
+	width: 43%;
+	margin-right: 20px;
+	float: left;
 }
 
 #main p{
 	margin: 30px;
 	color: #fff;
+	font-size: 1.3em;
 }
 
 #main li {
 	margin: 30px;
+	color: #fff;
+}
+
+#main li a{
+	color: #fff;
 }
 h2 {
     font-size: 2em;
@@ -129,7 +144,7 @@ button:hover {
 /* Tables */
 table {
     width: 100%;
-    background-color: #AAA;
+    background-color: #54E13D;
     padding: 0;
     border: 1px solid #000;
     border-collapse: collapse;
@@ -141,7 +156,6 @@ table, td, th {
 
 /* Footer CSS Rules */
 #footer {
-    background-color: #3F0B52;
     padding: 1%;
 }
 #footer p {
