@@ -1,10 +1,10 @@
 - 5 Pages
 - Home page highlights pages
 - Calendar
-  Pricing and Purchasing
+- Pricing and Purchasing
   Gallery page
   Social Links
   Newsletter
-- Video
+  Video
   Copyright page
   Copyright/fair use
