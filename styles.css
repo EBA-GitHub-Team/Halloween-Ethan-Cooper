@@ -5,6 +5,9 @@
     All Rights Reserved
 */
 
+@import url('https://fonts.googleapis.com/css2?family=Autour+One&family=Lobster&family=Young+Serif&display=swap');
+
+
 /* CSS Reset */
 body, h1, div, img, ul {
     margin: 0;
@@ -17,7 +20,7 @@ body, h1, div, img, ul {
 /* Global CSS Rules */
 body {
     background-color: #3F0B52;
-    font-family: "Segoe UI", Verdana, Arial, "sans-serif";
+    font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
 }
 img {
     max-width: 100%;
@@ -64,13 +67,27 @@ img {
 /* Main CSS Rules */
 #main {
     clear: both;
-    background-color: #fff;
+    background-color: ;
     padding: 2%;
     font-size: 1.25em;
+	margin: 0 auto;
+	width: 90%;
+	border-radius: 10px;
+}
+
+#main p{
+	margin: 30px;
+	color: #;
+}
+
+#main li {
+	margin: 30px;
 }
 h2 {
     font-size: 2em;
     font-weight: 500;
+	margin: 20px;
+	font-family: lobster; 
 }
 h3 {
     font-weight: 500;
