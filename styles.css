@@ -19,7 +19,7 @@ body, h1, div, img, ul {
 
 /* Global CSS Rules */
 body {
-    background-color: #470A70;
+    background-color: #4A0C58;
     font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
 }
 img {
@@ -84,7 +84,7 @@ img {
 
 #main p{
 	margin: 30px;
-	color: #fff;
+	color: #030c27;
 	font-size: 1.3em;
 }
 
@@ -94,7 +94,7 @@ img {
 }
 
 #main li a{
-	color: #fff;
+	color: #030c27;
 }
 h2 {
     font-size: 2em;
@@ -144,7 +144,7 @@ button:hover {
 /* Tables */
 table {
     width: 100%;
-    background-color: #54E13D;
+    background-color: #5cf745;
     padding: 0;
     border: 1px solid #000;
     border-collapse: collapse;
