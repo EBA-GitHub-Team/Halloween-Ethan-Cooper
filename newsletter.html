@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Phantom Phactory: Newsletter</title>
+		<link href="styles.css" rel="stylesheet">
+        <link rel="shortcut icon" href="files/favicon.ico">
+		<meta charset="utf-8">
+		<script src="mobileCheck.js"></script>
+        <script src="formSubmit.js"></script>
+	</head>
+	
+	<body>
+        <div id="header">
+            <a href="index.html"><img src="files/logo.png" alt="Logo"></a>
+        </div>
+        
+        <div id="nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="attractions.html">Attractions</a></li>
+                <li><a href="tickets.html">Tickets</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="newsletter.html">Newsletter</a></li>
+            </ul>
+        </div>
+        
+        <div id="main">
+			<h2>Phantom Phactory <strong>Newsletter</strong></h2>
+            <p>Use the form below to sign up for our newsletter!</p>
+
+            <p id='errForm' style="color: red; text-align: center; font-size: 10px;"></p>
+            <form>
+                <label for="firstName">First Name:</label><br>
+                <input id="firstName" name="firstName" type="text"></input><br>
+                <label for="lastName">Last Name:</label><br>
+                <input id="lastName" name="lastName" type="text"></input><br>
+                <label for="email">Email Address:</label><br>
+                <input id="email" name="email" type="email"></input><br>
+                <input id="submit" name="submit" type="button" value="Sign Up" onclick="submitForm('newsletter', this.form)"></input>
+            </form>
+        </div>
+        
+        <div id="footer">
+            <p>Property of EthanBlaisAlarms<br>&copy; Copyright EthanBlaisAlarms 2023<br>All Rights Reserved</p>
+            <p><a href="copyright.html">Click for copyright information.</a></p>
+        </div>
+	</body>
+</html>

@@ -3,7 +3,7 @@
 - Calendar
 - Pricing and Purchasing
   Gallery page
-  Social Links
+- Social Links
   Newsletter
   Video
   Copyright page
