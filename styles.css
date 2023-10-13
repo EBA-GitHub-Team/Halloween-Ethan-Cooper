@@ -67,17 +67,15 @@ img {
 /* Main CSS Rules */
 #main {
     clear: both;
-    background-color: ;
+	
     padding: 2%;
     font-size: 1.25em;
-	margin: 0 auto;
-	width: 90%;
-	border-radius: 10px;
+	
 }
 
 #main p{
 	margin: 30px;
-	color: #;
+	color: #fff;
 }
 
 #main li {
@@ -87,7 +85,8 @@ h2 {
     font-size: 2em;
     font-weight: 500;
 	margin: 20px;
-	font-family: lobster; 
+	font-family: lobster;
+	color: #fff
 }
 h3 {
     font-weight: 500;
