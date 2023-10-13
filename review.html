@@ -28,9 +28,13 @@
 			<h2>Review <strong>Your Order</strong>!</h2>
 
             <p>Please confirm that the following information is correct:</p>
-            <p>Cost Per Ticket: <strong>$100</strong></p>
+            <p>First Ticket Cost: <strong>$99.99</strong></p>
+            <p>Each Additional Ticket: <strong>$49.99</strong></p>
             <p>Your Order: <strong><span id="tickets">0</span> Ticket(s)</strong></p>
-            <p>Your Total: <strong>$<span id="cost"></span></strong></p>
+            <p>Subtotal: <strong>$<span id="subtotal"></span></strong></p>
+            <p>Tax: <strong>$<span id="tax"></span></strong></p>
+            <p>Website Fee: <strong>$<span id="fee"></span></strong></p>
+            <p>Total: <strong>$<span id="total"></span></strong></p>
             <button onclick="complete()">Complete Purchase</button>
         </div>
         
@@ -58,7 +62,13 @@
                 throw 'Maximum purchase is 100 tickets';
             }
             document.getElementById('tickets').innerHTML = amount;
-            document.getElementById('cost').innerHTML = amount * 100;
+            let subtotal = 99.99 + (amount - 1) * 49.99;
+            let tax = Math.round(subtotal * 8) / 100;
+            let fee = Math.round(subtotal * 3) / 100;
+            document.getElementById('subtotal').innerHTML = subtotal;
+            document.getElementById('tax').innerHTML = tax;
+            document.getElementById('fee').innerHTML = fee;
+            document.getElementById('total').innerHTML = subtotal + tax + fee;
             function complete() {
                 document.location = 'cardError.html';
             }
