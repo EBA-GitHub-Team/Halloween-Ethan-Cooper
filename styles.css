@@ -19,7 +19,7 @@ body, h1, div, img, ul {
 
 /* Global CSS Rules */
 body {
-    background-color: #4A0C58;
+    background-color: #FA5800;
     font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
 }
 img {
@@ -74,6 +74,7 @@ img {
     clear: both;
     padding: 2%;
     font-size: 1.25em;
+	background-color: #4A0C58;
 }
 
 .dance {
@@ -106,6 +107,7 @@ h2 {
 h3 {
     font-weight: 500;
     font-size: 1.5em;
+	color: #fff;
 }
 hr {
     color: #000;
