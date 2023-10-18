@@ -13,7 +13,7 @@
         <div id="header">
             <a href="index.html"><img src="files/logo.png" alt="Logo"></a>
         </div>
-        
+        <p class="title">Phantom Phactory</p>
         <div id="nav">
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -28,17 +28,17 @@
 			<h2>Purchase <strong>Tickets</strong>!</h2>
             <p>Use the form below to purchase tickets! <strong>Ticket Cost: $99.99 for 1 ticket!</strong> +$49.99 each additional ticket.</p>
 
-            <p id='errForm' style="color: red; text-align: center; font-size: 10px;"></p>
+            <p id="errForm" style="color: red; text-align: center; font-size: 10px;"></p>
             <form>
                 <label for="firstName">First Name:</label><br>
-                <input id="firstName" name="firstName" type="text"></input><br>
+                <input id="firstName" name="firstName" type="text"><br>
                 <label for="lastName">Last Name:</label><br>
-                <input id="lastName" name="lastName" type="text"></input><br>
+                <input id="lastName" name="lastName" type="text"><br>
                 <label for="email">Email Address:</label><br>
-                <input id="email" name="email" type="email"></input><br>
+                <input id="email" name="email" type="email"><br>
                 <label for="phone">Phone Number:</label><br>
-                <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"></input><br>
-                <input id="submit" name="submit" type="button" value="Proceed to Payment" onclick="submitForm('contactInfo', this.form)"></input>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"><br>
+                <input id="submit" name="submit" type="button" value="Proceed to Payment" onclick="submitForm('contactInfo', this.form)">
             </form>
         </div>
         

@@ -19,8 +19,7 @@ body, h1, div, img, ul {
 
 /* Global CSS Rules */
 body {
-    background-color: #FA5800;
-    font-family: "Monsterific BB";
+    background-color: #09101D;
 }
 img {
     max-width: 100%;
@@ -31,8 +30,25 @@ img {
 #header {
     position: static;
     top: 0;
-
 }
+
+.title{
+	font-family: "Monsterific BB";
+	padding: 30px;
+	text-align: center;
+	font-size: 6em;
+	color: #AFFC41;
+	text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px #0fa,
+    0 0 82px #0fa,
+    0 0 92px #0fa,
+    0 0 102px #0fa,
+    0 0 151px #0fa;
+}
+
 #header img {
     margin: 0 auto;
     padding-top: 10px;
@@ -48,11 +64,12 @@ img {
     text-align: center;
 }
 #nav li {
-    font-size: 1.2em;
+    font-size: 2em;
     font-weight: 500;
     display: inline-block;
-
+	color: #fff;
     padding: 1%;
+	font-family: "Monsterific BB";
 }
 #nav li a {
     display: block;
@@ -62,7 +79,16 @@ img {
 }
 
 #nav li a:hover{
-	font-size: 1.3em;
+	color: #AFFC41;
+	 text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px #0fa,
+    0 0 82px #0fa,
+    0 0 92px #0fa,
+    0 0 102px #0fa,
+    0 0 151px #0fa;
 }
 
 #nav li:last-child {
@@ -74,7 +100,7 @@ img {
     clear: both;
     padding: 2%;
     font-size: 1.25em;
-	background-color: #4A0C58;
+	background-color: #F6F7F8;
 }
 
 .dance {
@@ -85,29 +111,33 @@ img {
 
 #main p {
 	margin: 30px;
-	color: #fff;
+	color: #09101D;
 	font-size: 1.3em;
+	font-family: "TotallyGlyphic OT";
 }
 
 #main li {
 	margin: 30px;
-	color: #fff;
+	color: #09101D;
 }
 
 #main li a{
-	color: #fff;
+	color: #09101D;
+	font-family: "TotallyGlyphic OT";
 }
 h2 {
     font-size: 2em;
     font-weight: 500;
 	margin: 20px;
-	font-family: lobster;
-	color: #fff
+	font-family: "TotallyGlyphic OT";
+	color: #A71D31;
 }
 h3 {
     font-weight: 500;
     font-size: 1.5em;
-	color: #fff;
+	color: #09101D;
+	font-family: "TotallyGlyphic OT";
+	margin-left: 40px;
 }
 hr {
     color: #000;
@@ -126,7 +156,7 @@ button {
     margin-bottom: 1%;
 }
 button:hover {
-    background-color: #ccc;
+    
 }
 label {
     height: 2em;
@@ -142,9 +172,7 @@ input {
     background-color: #ddd;
     margin-bottom: 1%;
 }
-input:hover {
-    background-color: #ccc;
-}
+
 
 /* Message Boxes */
 .msgbox {
@@ -171,6 +199,7 @@ table {
 }
 table, td, th {
     border: 1px solid;
+	
 }
 
 /* Footer CSS Rules */
@@ -178,11 +207,22 @@ table, td, th {
     padding: 1%;
 }
 #footer p {
-    font-size: 0.75em;
+    font-size: 1.5em;
     text-align: center;
     color: #ffffff;
     padding: 0 1em;
+	font-family: "Monsterific BB";
 }
 #footer a {
     color: #ffffff;
+}
+
+form input{
+	background-color: #09101D;
+	color: #F6F7F8;
+}
+
+form label{
+	color: #A71D31;
+	font-family: "TotallyGlyphic OT";
 }
