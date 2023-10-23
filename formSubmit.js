@@ -1,38 +1,41 @@
 function submitForm(name, form) {
-	formGood = true
-	formErr = ''
+	let err = '';
+	let fields = [];
 	switch (name) {
 	case 'contactInfo':
-		formErr = 'All fields must be filled. Please check:';
-		if (form.firstName.value == '') { formGood = false; formErr += ' First Name;'; }
-		if (form.lastName.value == '') { formGood = false; formErr += ' Last Name;'; }
-		if (form.email.value == '') { formGood = false; formErr += ' Email Address;'; }
-		if (form.phone.value == '') { formGood = false; formErr += ' Phone Number;'; }
-		if (formGood) { document.location = 'payment.html?name=' + form.firstName.value + '%20' + form.lastName.value; }
-		else { document.getElementById('errForm').innerHTML = formErr; }
+		fields = [
+			[ 'firstName', 'First Name' ],
+			[ 'lastName', 'Last Name' ],
+			[ 'email', 'Email Address' ],
+			[ 'phone', 'Phone Number' ],
+		];
+		fields.forEach((item) => { if (!form[item[0]].value) { err += ' ' + item[1] + ';'; } });
+		if (err) { return document.getElementById('errForm').innerHTML = 'All fields must be filled. Please check:' + err; }
+		document.location = 'payment.html?name=' + form.firstName.value + '%20' + form.lastName.value;
 		break;
 	
 	case 'payment':
-		formErr = 'All fields must be filled. Please check:';
-		if (form.cardholder.value == '') { formGood = false; formErr += ' Cardholder Name;'; }
-		if (form.cardnum.value == '') { formGood = false; formErr += ' Card Number;'; }
-		if (form.expiry.value == '') { formGood = false; formErr += ' Expiration Date;'; }
-		if (form.security.value == '') { formGood = false; formErr += ' Security Code;'; }
-		if (form.amount.value == '') { formGood = false; formErr += ' Ticket Quantity;'; }
-		if (formGood) { document.location = 'review.html?quantity=' + form.amount.value; }
-		else { document.getElementById('errForm').innerHTML = formErr; }
+		fields = [
+			[ 'cardholder', 'Cardholder Name' ],
+			[ 'cardnum', 'Card Number' ],
+			[ 'expiry', 'Expiration Date' ],
+			[ 'security', 'Security Code' ],
+		];
+		fields.forEach((item) => { if (!form[item[0]].value) { err += ' ' + item[1] + ';'; } });
+		if (!form.standard.value && !form.premium.value) { err += ' Ticket Quantity;'; }
+		if (err) { return document.getElementById('errForm').innerHTML = 'All fields must be filled. Please check:' + err; }
+		document.location = 'review.html?standard=' + (form.standard.value ? form.standard.value : 0) + '&premium=' + (form.premium.value ? form.premium.value : 0);
 		break;
 	
 	case 'newsletter':
-		formErr = 'All fields must be filled. Please check:';
-		if (form.firstName.value == '') { formGood = false; formErr += ' First Name;'; }
-		if (form.lastName.value == '') { formGood = false; formErr += ' Last Name;'; }
-		if (form.email.value == '') { formGood = false; formErr += ' Email Address;'; }
-		if (formGood) {
-			alert('SUCCESS: You have been signed up for our newsletter!\nYou will be redirected to the home page.');
-			document.location = 'index.html';
-		}
-		else { document.getElementById('errForm').innerHTML = formErr; }
-		break;
+		fields = [
+			[ 'firstName', 'First Name' ],
+			[ 'lastName', 'Last Name' ],
+			[ 'email', 'Email Address' ],
+		];
+		fields.forEach((item) => { if (!form[item[0]].value) { err += ' ' + item[1] + ';'; } });
+		if (err) { return document.getElementById('errForm').innerHTML = 'All fields must be filled. Please check:' + err; }
+		alert('ERROR: Sign-ups are currently closed!\nYou will be redirected to the home page.');
+		document.location = 'index.html';
 	}
 }

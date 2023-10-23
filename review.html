@@ -28,13 +28,12 @@
 			<h2>Review <strong>Your Order</strong>!</h2>
 
             <p>Please confirm that the following information is correct:</p>
-            <p>First Ticket Cost: <strong>$99.99</strong></p>
-            <p>Each Additional Ticket: <strong>$49.99</strong></p>
-            <p>Your Order: <strong><span id="tickets">0</span> Ticket(s)</strong></p>
-            <p>Subtotal: <strong>$<span id="subtotal"></span></strong></p>
-            <p>Tax: <strong>$<span id="tax"></span></strong></p>
-            <p>Website Fee: <strong>$<span id="fee"></span></strong></p>
-            <p>Total: <strong>$<span id="total"></span></strong></p>
+            <p><strong>Standard Tickets</strong>: $29.99, +$14.99 each additional</p>
+            <p><strong>Premium Tickets</strong>: $79.99, +$39.99 each additional</p>
+            <p><strong>Your Order:</strong><span id="order"></span></p>
+            <p><strong>Subtotal</strong>: $<span id="subtotal"></span></p>
+            <p><strong>Taxes/Fees</strong>: $<span id="fees"></span></p>
+            <p><strong>Total</strong>: $<span id="total"></span></p>
             <button onclick="complete()">Complete Purchase</button>
         </div>
         
@@ -44,33 +43,45 @@
         </div>
 
         <script>
-			const urlParams = new URLSearchParams(window.location.search);
-            let amount = parseInt(Number(urlParams.get('quantity')));
-            if (isNaN(amount)) {
-                alert('Your order cannot be completed: Cannot parse quantity.\nYou will be redirected to the purchase page.');
-                document.location = 'tickets.html';
-                throw 'Cannot parse quantity';
-            }
-            if (amount < 1) {
-                alert('Your order cannot be completed: Minimum purchase is 1 ticket.\nYou will be redirected to the purchase page.');
-                document.location = 'tickets.html';
-                throw 'Minimum purchase is 1 ticket';
-            }
-            if (amount > 100) {
-                alert('Your order cannot be completed: Maximum purchase is 100 tickets.\nYou will be redirected to the purchase page.');
-                document.location = 'tickets.html';
-                throw 'Maximum purchase is 100 tickets';
-            }
-            document.getElementById('tickets').innerHTML = amount;
-            let subtotal = 99.99 + (amount - 1) * 49.99;
-            let tax = Math.round(subtotal * 8) / 100;
-            let fee = Math.round(subtotal * 3) / 100;
-            document.getElementById('subtotal').innerHTML = subtotal;
-            document.getElementById('tax').innerHTML = tax;
-            document.getElementById('fee').innerHTML = fee;
-            document.getElementById('total').innerHTML = subtotal + tax + fee;
             function complete() {
                 document.location = 'cardError.html';
+            }
+            try {
+                const urlParams = new URLSearchParams(window.location.search);
+                let standard = parseInt(Number(urlParams.get('standard')));
+                let premium = parseInt(Number(urlParams.get('premium')));
+                if (isNaN(standard)) { throw 'Cannot parse standard quantity'; }
+                if (isNaN(premium)) { throw 'Cannot parse standard quantity'; }
+                if (standard + premium < 1 ) { throw 'Minimum purchase is 1 ticket'; }
+                if (standard + premium > 100) { throw 'Maximum purchase is 100 tickets'; }
+
+                let order = [];
+                let total = 0;
+
+                if (standard) {
+                    let amount = 29.99 + (standard - 1) * 14.99;
+                    order.push(standard + ' Standard Ticket' + (standard > 1 ? 's' : '') + ': $' + amount.toFixed(2));
+                    total += amount;
+                }
+                if (premium) {
+                    let amount = 79.99 + (premium - 1) * 39.99;
+                    order.push(premium + ' Premium Ticket' + (premium > 1 ? 's' : '') + ': $' + amount.toFixed(2));
+                    total += amount;
+                }
+                let tax = Math.round(total * 8) / 100;
+                let fee = Math.round(total * 3) / 100;
+                order.push('Tax: $' + tax.toFixed(2));
+                order.push('Website Fee: $' + fee.toFixed(2));
+                let orderString = '';
+                order.forEach((item) => { orderString += '<br>' + item; })
+                document.getElementById('order').innerHTML = orderString;
+                document.getElementById('subtotal').innerHTML = total.toFixed(2);
+                document.getElementById('fees').innerHTML = (tax + fee).toFixed(2);
+                document.getElementById('total').innerHTML = (total + tax + fee).toFixed(2);
+            }
+            catch (err) {
+                alert('ERROR: ' + err + '\nYou will be redirected to the purchase page.');
+                document.location = 'tickets.html';
             }
         </script>
 	</body>
