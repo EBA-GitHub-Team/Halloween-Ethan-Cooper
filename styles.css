@@ -126,9 +126,13 @@ img {
 	color: #09101D;
 }
 
-#main li a{
+#main li a {
 	color: #09101D;
-	font-family: "TotallyGlyphic OT";
+	font-family: "Segoe UI", "Arial", sans-serif;
+}
+#main li a:hover {
+	color: #1d4183;
+	font-family: "Segoe UI", "Arial", sans-serif;
 }
 h2 {
     font-size: 2em;
@@ -159,9 +163,6 @@ button {
     border: 1px solid black;
     background-color: #ddd;
     margin-bottom: 1%;
-}
-button:hover {
-    
 }
 label {
     height: 2em;
