@@ -233,13 +233,43 @@ form label{
 	font-family: "TotallyGlyphic OT";
 }
 
-.column {
-	flex: 50%;
-	padding: 0 4px;
-}
-
-.row {
-	display: flex;
-	flex-wrap: wrap;
-	padding: 0 4px;
-}
+.gallery{
+			display: grid;
+			width: 100%;
+			grid-template-columns: 30% 30% 30%;
+			grid-template-areas:
+				"it1 it2 it3"
+				"it4 it5 it6"
+				"it7 it8 it9";
+			grid-gap: 1% 1%;
+			margin: 5% 0%;
+			justify-content: center;
+		}
+		
+		#img1{
+			grid-area: it1;
+		}
+		#img2{
+			grid-area: it2;
+		}
+		#img3{
+			grid-area: it3;
+		}
+		#img4{
+			grid-area: it4;
+		}
+		#img5{
+			grid-area: it5;
+		}
+		#img6{
+			grid-area: it6;
+		}
+		#img7{
+			grid-area: it7;
+		}
+		#img8{
+			grid-area: it8;
+		}
+		#img9{
+			grid-area: it9;
+		}
